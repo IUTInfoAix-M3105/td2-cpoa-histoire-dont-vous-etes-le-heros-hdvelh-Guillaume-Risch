@@ -16,12 +16,14 @@ public class NodeMultiple {
 	public static final String ERROR_MSG_INDEX_OUT_OF_RANGE = "Index out of range";
 	public static int NODE_MAX_ARITY = 10;
 	private NodeMultiple[] mydaughter;
-	//private Set<NodeMultiple> mydaughter = new Set<NodeMultiple>(this.NODE_MAX_ARITY)); 
+	private Object Mdata = new NodeMultiple();
+	
 
 	/* Overridden methods */
 	@Override
 	public String toString() {
 		/* TO BE COMPLETED */
+		return ""+this.Mdata+"";
 	}
 
 	/* Getters/Setters */
@@ -82,15 +84,24 @@ public class NodeMultiple {
 	 * @param daughter
 	 */
 	public void addDaughter(NodeMultiple daughter) {
-		/* TO BE COMPLETED */
-		NodeMultiple.
+		if (mydaughter.length < NodeMultiple.NODE_MAX_ARITY)
+		{
+			for(int i = 0; i < this.mydaughter.length; ++i)
+			{
+				if (mydaughter[i] == null)
+				{
+					mydaughter[i] = daughter;
+				}
+			}
+		}
+	 		
 	}
-
 	/**
 	 * @return the content data
 	 */
 	public Object getData() {
 		/* TO BE COMPLETED */
+		return this.Mdata;
 	}
 
 	/**
@@ -98,6 +109,7 @@ public class NodeMultiple {
 	 */
 	public void setData(Object data) {
 		/* TO BE COMPLETED */
+		this.Mdata = data;
 	}
 
 	/**
@@ -106,6 +118,14 @@ public class NodeMultiple {
 	 */
 	public boolean hasDaughters() {
 		/* TO BE COMPLETED */
+		for(int i = 0; i < this.myDaughters.length; ++i)
+		{
+			if( myDaughters[i] != null)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/* Constructors */
