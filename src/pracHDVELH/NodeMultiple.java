@@ -6,7 +6,7 @@
 package pracHDVELH;
 
 import myUtils.ErrorNaiveHandler;
-
+import java.util.ArrayList;
 /**
  * @author prost
  *
@@ -15,6 +15,8 @@ public class NodeMultiple {
 	public static final int ERROR_STATUS_INDEX_OUT_OF_RANGE = -1;
 	public static final String ERROR_MSG_INDEX_OUT_OF_RANGE = "Index out of range";
 	public static int NODE_MAX_ARITY = 10;
+	private NodeMultiple[] mydaughter;
+	//private Set<NodeMultiple> mydaughter = new Set<NodeMultiple>(this.NODE_MAX_ARITY)); 
 
 	/* Overridden methods */
 	@Override
@@ -33,6 +35,7 @@ public class NodeMultiple {
 	 */
 	public NodeMultiple getDaughter(int i) {
 		/* TO BE COMPLETED */
+		return this.mydaughter[i];
 	}
 
 	/**
@@ -51,6 +54,7 @@ public class NodeMultiple {
 	 */
 	public void setDaughter(NodeMultiple daughter, int i) {
 		/* TO BE COMPLETED */
+		this.mydaughter[i] = daughter;
 	}
 
 	/**
@@ -58,6 +62,7 @@ public class NodeMultiple {
 	 */
 	public NodeMultiple[] getDaughters() {
 		/* TO BE COMPLETED */
+		return this.mydaughter;
 	}
 
 	/**
@@ -65,6 +70,7 @@ public class NodeMultiple {
 	 */
 	public void setDaughters(NodeMultiple[] daughters) {
 		/* TO BE COMPLETED */
+		this.mydaughter = daughters;
 	}
 
 	/**
@@ -77,6 +83,7 @@ public class NodeMultiple {
 	 */
 	public void addDaughter(NodeMultiple daughter) {
 		/* TO BE COMPLETED */
+		NodeMultiple.
 	}
 
 	/**
