@@ -148,7 +148,8 @@ public class NodeMultiple {
 		/* TO BE COMPLETED */
 		this.Mdata = data;
 		this.mydaughters = null;
-		
+
+
 	}
 	
 }
