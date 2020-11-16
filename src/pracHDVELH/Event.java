@@ -17,12 +17,17 @@ public class Event extends NodeMultiple {
 	public static final String ERROR_MSG_UNEXPECTED_END = "Sorry, for some unexpected reason the story ends here...";
 	public static final String PROMPT_ANSWER = "Answer: ";
 	public static final String WARNING_MSG_INTEGER_EXPECTED = "Please input a integer within range!";
-
+	private String situationJ;
+	private int idPath; 
+	private Scanner input = new Scanner(System.in);
+	private String answer;
+	
 	/**
 	 * @return the playerAnswer
 	 */
 	public String getPlayerAnswer() {
 		/* TO BE COMPLETED */
+		return this.answer;
 	}
 
 	/**
@@ -30,6 +35,7 @@ public class Event extends NodeMultiple {
 	 */
 	public void setPlayerAnswer(String playerAnswer) {
 		/* TO BE COMPLETED */
+		this.answer = playerAnswer;
 	}
 
 	/**
@@ -37,6 +43,7 @@ public class Event extends NodeMultiple {
 	 */
 	public Scanner getReader() {
 		/* TO BE COMPLETED */
+		return this.input;
 	}
 
 	/**
@@ -44,6 +51,7 @@ public class Event extends NodeMultiple {
 	 */
 	public void setReader(Scanner reader) {
 		/* TO BE COMPLETED */
+		this.input = reader;
 	}
 
 	/**
@@ -51,6 +59,7 @@ public class Event extends NodeMultiple {
 	 */
 	public int getChosenPath() {
 		/* TO BE COMPLETED */
+		return this.idPath;
 	}
 
 	/**
@@ -58,6 +67,7 @@ public class Event extends NodeMultiple {
 	 */
 	public void setChosenPath(int chosenPath) {
 		/* TO BE COMPLETED */
+		
 	}
 
 	/* Methods */
@@ -66,6 +76,7 @@ public class Event extends NodeMultiple {
 	 */
 	public String getData() {
 		/* TO BE COMPLETED */
+		return this.situationJ;
 	}
 
 	/**
@@ -74,6 +85,7 @@ public class Event extends NodeMultiple {
 	 */
 	public void setData(String data) {
 		/* TO BE COMPLETED */
+		this.situationJ = data;
 	}
 
 	/**

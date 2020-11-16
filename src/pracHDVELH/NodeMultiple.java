@@ -118,9 +118,9 @@ public class NodeMultiple {
 	 */
 	public boolean hasDaughters() {
 		/* TO BE COMPLETED */
-		for(int i = 0; i < this.myDaughters.length; ++i)
+		for(int i = 0; i < this.mydaughters.length; ++i)
 		{
-			if( myDaughters[i] != null)
+			if( mydaughters[i] != null)
 			{
 				return true;
 			}
@@ -134,6 +134,8 @@ public class NodeMultiple {
 	 */
 	public NodeMultiple() {
 		/* TO BE COMPLETED */
+		this.Mdata = null;
+		this.mydaughters = null;
 	}
 
 	/**
@@ -144,6 +146,8 @@ public class NodeMultiple {
 	 */
 	public NodeMultiple(Object data) {
 		/* TO BE COMPLETED */
+		this.Mdata = data;
+		this.mydaughters = null;
 }
 
 // eof
