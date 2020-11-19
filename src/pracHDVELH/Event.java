@@ -17,17 +17,38 @@ public class Event extends NodeMultiple {
 	public static final String ERROR_MSG_UNEXPECTED_END = "Sorry, for some unexpected reason the story ends here...";
 	public static final String PROMPT_ANSWER = "Answer: ";
 	public static final String WARNING_MSG_INTEGER_EXPECTED = "Please input a integer within range!";
-	private String situationJ;
-	private int idPath; 
-	private Scanner input = new Scanner(System.in);
-	private String answer;
+	private String playerAnswer;
+	private int id; 
+	private Scanner reader;
+	private String pathAnswer;
+	private GUIManager gui;
+	protected String data;
+	private int chosenPath;
+	static private int lastId = -1;
+	
+	
+	public Event() {
+		
+		this(new GUIManager(),"");
+	}
+	
+		
+	public Event(GUIManager gui, String data){
+		super(data);
+		this.gui = gui;
+		this.data = data;
+		reader=gui.getInputReader();
+		this.id = lastId + 1;
+		lastId = lastId + 1;
+		chosenPath = 0;
+	}
 	
 	/**
 	 * @return the playerAnswer
 	 */
 	public String getPlayerAnswer() {
 		/* TO BE COMPLETED */
-		return this.answer;
+		return this.playerAnswer;
 	}
 
 	/**
@@ -35,7 +56,7 @@ public class Event extends NodeMultiple {
 	 */
 	public void setPlayerAnswer(String playerAnswer) {
 		/* TO BE COMPLETED */
-		this.answer = playerAnswer;
+		this.playerAnswer = playerAnswer;
 	}
 
 	/**
@@ -43,7 +64,7 @@ public class Event extends NodeMultiple {
 	 */
 	public Scanner getReader() {
 		/* TO BE COMPLETED */
-		return this.input;
+		return this.reader;
 	}
 
 	/**
@@ -51,7 +72,7 @@ public class Event extends NodeMultiple {
 	 */
 	public void setReader(Scanner reader) {
 		/* TO BE COMPLETED */
-		this.input = reader;
+		this.gui.(reader);
 	}
 
 	/**
@@ -59,7 +80,7 @@ public class Event extends NodeMultiple {
 	 */
 	public int getChosenPath() {
 		/* TO BE COMPLETED */
-		return this.idPath;
+		return this.chosenPath;
 	}
 
 	/**
@@ -67,6 +88,7 @@ public class Event extends NodeMultiple {
 	 */
 	public void setChosenPath(int chosenPath) {
 		/* TO BE COMPLETED */
+		this.chosenPath = chosenPath;
 		
 	}
 
@@ -76,7 +98,7 @@ public class Event extends NodeMultiple {
 	 */
 	public String getData() {
 		/* TO BE COMPLETED */
-		return this.situationJ;
+		return this.data;
 	}
 
 	/**
@@ -85,7 +107,7 @@ public class Event extends NodeMultiple {
 	 */
 	public void setData(String data) {
 		/* TO BE COMPLETED */
-		this.situationJ = data;
+		this.data = data;
 	}
 
 	/**
@@ -110,6 +132,7 @@ public class Event extends NodeMultiple {
 	 */
 	public GUIManager getGui() {
 		/* TO BE COMPLETED */
+		return gui;
 	}
 
 	/**
@@ -117,6 +140,7 @@ public class Event extends NodeMultiple {
 	 */
 	public void setGui(GUIManager gui) {
 		/* TO BE COMPLETED */
+		this.gui = gui;
 	}
 
 	/**
@@ -124,11 +148,22 @@ public class Event extends NodeMultiple {
 	 */
 	public int getId() {
 		/* TO BE COMPLETED */
+		return id;
 	}
 
 	/* Methods */
 	/* TO BE COMPLETED */
+	
+	
+public Event run() {
+	gui.outputln(this.getData());
+	gui.outputln(PROMPT_ANSWER);
+	playerAnswer=reader.next();
+	chosenPath=interpretAnswer();
+	return getDaughter(chosenPath);
+	
 	}
+
 }
 
 // eof
