@@ -132,7 +132,7 @@ public class Event extends NodeMultiple {
 	 */
 	public GUIManager getGui() {
 		/* TO BE COMPLETED */
-		return gui;
+		return this.gui;
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class Event extends NodeMultiple {
 	 */
 	public int getId() {
 		/* TO BE COMPLETED */
-		return id;
+		return this.id;
 	}
 
 	/* Methods */
@@ -163,8 +163,6 @@ public Event run() {
 	return getDaughter(chosenPath);
 	
 	}
-
-	
 
 }
 
